@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { DashBoardPage } from "./components/DashBoardPage";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <><div></div></>;
+  return (
+    <>
+      <DashBoardPage />
+    </>
+  );
 }
 
 export default App;
