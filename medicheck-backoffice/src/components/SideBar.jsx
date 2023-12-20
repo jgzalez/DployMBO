@@ -1,46 +1,46 @@
 import React from "react";
 import appLogo from "../assets/applogo.png";
-import DashboardOutlinedIcon from "@material-ui/icons/DashboardOutlined";
-import VerifiedUserOutlinedIcon from "@material-ui/icons/VerifiedUserOutlined";
+import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
+import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
 import { SidebarItem } from "./SidebarItem";
-import { ShoppingCartOutlined } from "@material-ui/icons";
-import LocalHospitalOutlinedIcon from "@material-ui/icons/LocalHospitalOutlined";
-import PermIdentityOutlinedIcon from "@material-ui/icons/PermIdentityOutlined";
-import AddToQueueOutlinedIcon from "@material-ui/icons/AddToQueueOutlined";
-import BallotOutlinedIcon from "@material-ui/icons/BallotOutlined";
-import ReportOutlinedIcon from "@material-ui/icons/ReportOutlined";
+import { ShoppingCartOutlined } from "@mui/icons-material";
+import LocalHospitalOutlinedIcon from "@mui/icons-material/LocalHospitalOutlined";
+import PermIdentityOutlinedIcon from "@mui/icons-material/PermIdentityOutlined";
+import AddToQueueOutlinedIcon from "@mui/icons-material/AddToQueueOutlined";
+import BallotOutlinedIcon from "@mui/icons-material/BallotOutlined";
+import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
 
 export const SideBar = () => {
   return (
-    <div className=" sticky left-0 h-full w-[273px] flex flex-col bg-[#1C222A] ">
-      <div className="w-full h-[84px] flex justify-start pl-8 items-center bg-[#232B43] text-white gap-[5%]">
+    <div className=" sticky left-0 h-full w-[274px] flex flex-col bg-[#1C222A]">
+      <div className="w-full h-[84px] flex justify-start pl-4 items-center bg-[#232B43] text-white gap-[5%]">
         <img src={appLogo} />
         <h1>MediCheck</h1>
       </div>
       <div className="flex flex-col ">
         <SidebarItem title="Dashboard">
-          <DashboardOutlinedIcon className="!text-4xl" />
+          <DashboardOutlinedIcon className="!text-3xl" />
         </SidebarItem>
         <SidebarItem title="Aseguradoras">
-          <VerifiedUserOutlinedIcon className="!text-4xl" />
+          <VerifiedUserOutlinedIcon className="!text-3xl" />
         </SidebarItem>
         <SidebarItem title="Productos">
-          <ShoppingCartOutlined className="!text-4xl" />
+          <ShoppingCartOutlined className="!text-3xl" />
         </SidebarItem>
         <SidebarItem title="Establecimientos">
-          <LocalHospitalOutlinedIcon className="!text-4xl" />
+          <LocalHospitalOutlinedIcon className="!text-3xl" />
         </SidebarItem>
         <SidebarItem title="Usuarios">
-          <PermIdentityOutlinedIcon className="!text-4xl" />
+          <PermIdentityOutlinedIcon className="!text-3xl" />
         </SidebarItem>
         <SidebarItem title="Coberturas">
-          <AddToQueueOutlinedIcon className="!text-4xl" />
+          <AddToQueueOutlinedIcon className="!text-3xl" />
         </SidebarItem>
         <SidebarItem title="Planes">
-          <BallotOutlinedIcon className="!text-4xl" />
+          <BallotOutlinedIcon className="!text-3xl" />
         </SidebarItem>
         <SidebarItem title="Incidentes">
-          <ReportOutlinedIcon className="!text-4xl" />
+          <ReportOutlinedIcon className="!text-3xl" />
         </SidebarItem>
       </div>
     </div>
