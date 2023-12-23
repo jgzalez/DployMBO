@@ -7,6 +7,9 @@ export default {
         "grey-hover": "rgba(217, 217, 217, 0.28)",
         "table-row-grey": "rgba(223, 222, 222, 0.21)",
       },
+      boxShadow: {
+        "main-shadow": " 0px 4px 4px 0px rgba(0, 0, 0, 0.25)",
+      },
     },
   },
   plugins: [],

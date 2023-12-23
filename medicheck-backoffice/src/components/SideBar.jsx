@@ -17,29 +17,29 @@ export const SideBar = () => {
         <img src={appLogo} />
         <h1>MediCheck</h1>
       </div>
-      <div className="flex flex-col ">
-        <SidebarItem title="Dashboard">
+      <div className="flex flex-col pt-2 ">
+        <SidebarItem title="Dashboard" path={"/dashboard"}>
           <DashboardOutlinedIcon className="!text-3xl" />
         </SidebarItem>
-        <SidebarItem title="Aseguradoras">
+        <SidebarItem title="Aseguradoras" path={"/"}>
           <VerifiedUserOutlinedIcon className="!text-3xl" />
         </SidebarItem>
-        <SidebarItem title="Productos">
+        <SidebarItem title="Productos" path={"/products"}>
           <ShoppingCartOutlined className="!text-3xl" />
         </SidebarItem>
-        <SidebarItem title="Establecimientos">
+        <SidebarItem title="Establecimientos" path={"/establishment"}>
           <LocalHospitalOutlinedIcon className="!text-3xl" />
         </SidebarItem>
-        <SidebarItem title="Usuarios">
+        <SidebarItem title="Usuarios" path={"/users"}>
           <PermIdentityOutlinedIcon className="!text-3xl" />
         </SidebarItem>
-        <SidebarItem title="Coberturas">
+        <SidebarItem title="Coberturas" path={"/coverage"}>
           <AddToQueueOutlinedIcon className="!text-3xl" />
         </SidebarItem>
-        <SidebarItem title="Planes">
+        <SidebarItem title="Planes" path={"/plans"}>
           <BallotOutlinedIcon className="!text-3xl" />
         </SidebarItem>
-        <SidebarItem title="Incidentes">
+        <SidebarItem title="Incidentes" path={"/incidents"}>
           <ReportOutlinedIcon className="!text-3xl" />
         </SidebarItem>
       </div>

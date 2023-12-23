@@ -9,11 +9,11 @@ export const PageMainContent = ({
   buttonIcon,
 }) => {
   return (
-    <div className="w-full h-[90%] bg-[#F3F2FB] p-5">
+    <div className="w-full h-[90%] bg-[#F3F2FB] pt-5">
       <div className="flex justify-between items-center">
-        <h1 className="text-black text-2xl">{title}</h1>
+        <h1 className="text-black text-2xl pl-8">{title}</h1>
         <div className="flex items-center gap-3 mr-16 ">
-          <button className="bg-[#0A41E9] h-[2.5rem] w-fit rounded-md text-white px-3">
+          <button className="bg-[#0A41E9] h-[2.5rem] w-fit rounded-md text-white px-3 shadow-main-shadow">
             {buttonIcon} {buttonDescription}
           </button>
           <div className="bg-[#0A41E9] h-[2.5rem] w-fit rounded-md px-3 flex items-center ">

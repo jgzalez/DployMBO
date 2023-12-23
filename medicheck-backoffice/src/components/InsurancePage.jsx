@@ -44,7 +44,7 @@ export const InsurancePage = () => {
     },
   ];
   return (
-    <div className="h-screen w-screen flex">
+    <div className="h-screen w-screen flex overflow-hidden">
       <SideBar />
       <div className=" h-full w-full flex-col">
         <TopBar />
