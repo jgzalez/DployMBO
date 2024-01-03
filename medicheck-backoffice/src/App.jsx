@@ -8,14 +8,16 @@ import { EstablishmentPage } from "./components/EstablishmentPage";
 import { CoveragePage } from "./components/CoveragePage";
 import { IncidentsPage } from "./components/IncidentsPage";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { LoginPage } from "./components/LoginPage";
 
 function App() {
   return (
     <>
       <Router>
         <Routes>
+          <Route path="/" element={<LoginPage />} />
           <Route path="/dashboard" element={<DashBoardPage />} />
-          <Route path="/" element={<InsurancePage />} />
+          <Route path="/insurance" element={<InsurancePage />} />
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/establishment" element={<EstablishmentPage />} />
           <Route path="/users" element={<UsersPage />} />
