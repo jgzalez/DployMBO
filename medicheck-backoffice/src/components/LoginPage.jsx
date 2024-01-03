@@ -4,13 +4,16 @@ import medicalImg from "../assets/loginPortrait.png";
 
 export const LoginPage = () => {
   return (
-    <div className="mt-[10%] xl:flex xl:mt-0 ">
+    <div className="mt-[10%] w-[100vw] xl:flex xl:mt-0 overflow-hidden">
       <div className=" xl:w-[50%] xl:bg-[#F1F5F9] xl:h-[100vh]">
-        <div className="flex justify-center items-center gap-1 xl:mt-10 xl:w-[80%] xl:mx-auto xl:my-0">
+        <div className="flex justify-center items-center gap-1 xl:mt-10 xl:w-[70%] xl:mx-auto xl:my-0 xl:justify-start xl:gap-5 xl:pt-12">
           <img src={Logo} className="w-[60px] xl:w-[129.67px] xl:h-[113px] " />
-          <h2 className="font-bold">Medicheck</h2>
+          <h2 className="font-bold xl:text-[32px] xl:font-bold">Medicheck</h2>
         </div>
-        <img src={medicalImg} className="hidden xl:block" />
+        <img
+          src={medicalImg}
+          className="hidden xl:block ml-[3%] object-scale-down"
+        />
       </div>
       <div className="mt-[10%] xl:w-[50%]">
         <div className="text-center">
@@ -19,7 +22,7 @@ export const LoginPage = () => {
             Sign in to your account to start using Medicheck admin
           </p>
         </div>
-        <form className="w-[80%] mx-auto my-0">
+        <form className="w-[80%] mx-auto my-0 xl:w-[50%]">
           <label className="block">
             ID
             <input
