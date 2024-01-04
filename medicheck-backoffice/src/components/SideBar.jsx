@@ -10,9 +10,10 @@ import AddToQueueOutlinedIcon from "@mui/icons-material/AddToQueueOutlined";
 import BallotOutlinedIcon from "@mui/icons-material/BallotOutlined";
 import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
 
-export const SideBar = () => {
+export const SideBar = ({ style }) => {
+  let sideBarClassname = `fixed h-full z-10 lg:sticky lg:left-0  lg:w-[274px] lg:flex lg:flex-col bg-[#1C222A] ${style}`;
   return (
-    <div className=" sticky left-0 h-full w-[274px] flex flex-col bg-[#1C222A]">
+    <div className={sideBarClassname}>
       <div className="w-full h-[84px] flex justify-start pl-4 items-center bg-[#232B43] text-white gap-[5%]">
         <img src={appLogo} />
         <h1>MediCheck</h1>
@@ -21,7 +22,7 @@ export const SideBar = () => {
         <SidebarItem title="Dashboard" path={"/dashboard"}>
           <DashboardOutlinedIcon className="!text-3xl" />
         </SidebarItem>
-        <SidebarItem title="Aseguradoras" path={"/"}>
+        <SidebarItem title="Aseguradoras" path={"/insurance"}>
           <VerifiedUserOutlinedIcon className="!text-3xl" />
         </SidebarItem>
         <SidebarItem title="Productos" path={"/products"}>

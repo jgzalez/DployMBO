@@ -1,8 +1,13 @@
 import React from "react";
 import Logo from "../assets/LoginLogo.png";
 import medicalImg from "../assets/loginPortrait.png";
+import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {
+  const navigate = useNavigate();
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
   return (
     <div className="mt-[10%] w-[100vw] xl:flex xl:mt-0 overflow-hidden">
       <div className=" xl:w-[50%] xl:bg-[#F1F5F9] xl:h-[100vh]">
@@ -22,7 +27,10 @@ export const LoginPage = () => {
             Sign in to your account to start using Medicheck admin
           </p>
         </div>
-        <form className="w-[80%] mx-auto my-0 xl:w-[50%]">
+        <form
+          className="w-[80%] mx-auto my-0 xl:w-[50%]"
+          onSubmit={handleSubmit}
+        >
           <label className="block">
             ID
             <input
@@ -45,7 +53,10 @@ export const LoginPage = () => {
             Keep me sign in
             <span className="pl-10 font-semibold">Forgot Password?</span>
           </label>
-          <button className="w-full h-[45px] bg-black rounded-[7px] text-white mt-8">
+          <button
+            onClick={() => navigate("/dashboard")}
+            className="w-full h-[45px] bg-black rounded-[7px] text-white mt-8"
+          >
             Sign in
           </button>
         </form>
