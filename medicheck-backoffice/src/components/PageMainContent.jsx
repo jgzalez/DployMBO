@@ -11,7 +11,10 @@ export const PageMainContent = ({
   ...props
 }) => {
   return (
-    <div className="w-full h-full bg-[#F3F2FB] pt-5 mt-[60px]" {...props}>
+    <div
+      className="w-full h-fit bg-[#F3F2FB] py-5 overflow-y-scroll overflow-x-hidden  mt-[60px] sm:h-full md:mt-[80px] lg:ml-[275px] lg:w-[77vw]  lg:overflow-hidden xl:w-[83vw]  xl:ml-[250px] 2xl:w-[86vw] 2xl:ml-[275px]"
+      {...props}
+    >
       {buttonIcon ? (
         <div className="flex justify-between items-center">
           <h1 className="text-black text-2xl pl-8">{title}</h1>
@@ -34,8 +37,10 @@ export const PageMainContent = ({
         </div>
       ) : (
         <div className="text-left">
-          <h1 className="text-black text-xl pl-4 font-semibold">{title}</h1>
-          <p className="text-[#898A8D] font-semibold text-sm pl-4 pt-2">
+          <h1 className="text-black text-xl pl-6 font-semibold lg:pl-20 xl:pl-16 2xl:pl-24">
+            {title}
+          </h1>
+          <p className="text-[#898A8D] font-semibold text-sm pl-6 pt-2 lg:pl-20 xl:pl-16 2xl:pl-24">
             {pageWelcome}
           </p>
         </div>

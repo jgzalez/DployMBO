@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SideBar } from "./SideBar";
 import { TopBar } from "./TopBar";
 import { PageMainContent } from "./PageMainContent";
@@ -61,11 +61,23 @@ export const CoveragePage = () => {
       Porcentaje: "90%",
     },
   ];
+  const [isOpen, setIsOpen] = useState(false);
+  function handleOpenMenu() {
+    setIsOpen(!isOpen);
+  }
+  console.log(isOpen);
+  function handleClose() {
+    setIsOpen(false);
+  }
   return (
     <div className="h-screen w-screen flex overflow-hidden">
-      <SideBar />
+      {isOpen ? (
+        <SideBar closeMenu={handleClose} />
+      ) : (
+        <SideBar style=" hidden lg:flex" />
+      )}
       <div className=" h-full w-full flex-col">
-        <TopBar />
+        <TopBar openMenu={handleOpenMenu} />
         <PageMainContent
           title={"Coberturas"}
           buttonDescription={"Agregar coberturas "}

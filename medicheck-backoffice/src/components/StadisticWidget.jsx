@@ -8,7 +8,7 @@ export const StadisticWidget = ({
   widgetDescription,
 }) => {
   return (
-    <div className="bg-white w-[90%] h-[120px] rounded-[15px] shadow-main-shadow my-3">
+    <div className="bg-white w-[90%] h-[120px] rounded-[15px] shadow-main-shadow my-3 lg:w-[78%] lg:h-[100px] xl:w-[83%] 2xl:h-[120px]">
       <div className="flex justify-between items-center px-4  h-[75%]">
         <div>
           <h1 className="font-bold text-[24px]">{total}</h1>
