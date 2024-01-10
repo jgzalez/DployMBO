@@ -12,18 +12,21 @@ export const PageMainContent = ({
 }) => {
   return (
     <div
-      className="w-full h-fit bg-[#F3F2FB] py-5 overflow-y-scroll overflow-x-hidden  mt-[60px] sm:h-full md:mt-[80px] lg:ml-[275px] lg:w-[77vw]  lg:overflow-hidden xl:w-[83vw]  xl:ml-[250px] 2xl:w-[86vw] 2xl:ml-[275px]"
+      onClick={() => console.log("Click")}
+      className="w-full h-screen  bg-[#F3F2FB] py-5 overflow-y-scroll overflow-x-hidden  mt-[60px] sm:h-full md:mt-[80px] lg:ml-[275px] lg:w-[77vw]   xl:w-[83vw]  xl:ml-[250px] 2xl:w-[86vw] 2xl:ml-[275px]"
       {...props}
     >
       {buttonIcon ? (
-        <div className="flex justify-between items-center">
-          <h1 className="text-black text-2xl pl-8">{title}</h1>
+        <div className="flex flex-col justify-center  md:flex-row md:items-center md:justify-between">
+          <h1 className="text-black mb-4 pl-3 font-semibold text-lg md:text-2xl md:pl-8 md:mb-0">
+            {title}
+          </h1>
 
-          <div className="flex items-center gap-3 mr-16 ">
-            <button className="bg-[#0A41E9] h-[2.5rem] w-fit rounded-md text-white px-3 shadow-main-shadow">
+          <div className="flex items-center pl-3  gap-3 md:mr-16 mb-4 ">
+            <button className="bg-[#0A41E9] text-xs w-[200px] rounded-md p-1 text-white md:px-3 shadow-main-shadow h-[2.5rem] md:w-fit ">
               {buttonIcon} {buttonDescription}
             </button>
-            <div className="bg-[#0A41E9] h-[2.5rem] w-fit rounded-md px-3 flex items-center ">
+            <div className="bg-[#0A41E9] h-[2.5rem] hidden md:w-fit rounded-md px-3 md:flex items-center ">
               <ChecklistIcon className="!text-white" />
             </div>
             <div className="relative">

@@ -1,6 +1,6 @@
 import React from "react";
-import Logo from "../assets/LoginLogo.png";
-import medicalImg from "../assets/loginPortrait.png";
+import Logo from "../../../assets/LoginLogo.png";
+import medicalImg from "../../../assets/loginPortrait.png";
 import { useNavigate } from "react-router-dom";
 
 export const LoginPage = () => {

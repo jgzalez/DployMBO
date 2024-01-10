@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { SideBar } from "./SideBar";
-import { TopBar } from "./TopBar";
-import { PageMainContent } from "./PageMainContent";
+
 import PostAddOutlinedIcon from "@mui/icons-material/PostAddOutlined";
-import { MainTable } from "./MainTable";
+import { MainTable } from "../../UI/MainTable";
+import { SideBar } from "../../UI/SideBar";
+import { TopBar } from "../../UI/TopBar";
+import { PageMainContent } from "../../UI/PageMainContent";
 export const PlansPage = () => {
   const dummyData = [
     {

@@ -1,14 +1,16 @@
 import { useState } from "react";
-import { DashBoardPage } from "./components/DashBoardPage";
-import { UsersPage } from "./components/UsersPage";
-import { PlansPage } from "./components/PlansPage";
-import { InsurancePage } from "./components/InsurancePage";
-import { ProductsPage } from "./components/ProductsPage";
-import { EstablishmentPage } from "./components/EstablishmentPage";
-import { CoveragePage } from "./components/CoveragePage";
-import { IncidentsPage } from "./components/IncidentsPage";
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import { LoginPage } from "./components/LoginPage";
+
+import { DashBoardPage } from "./components/Pages/DashboardPage/DashBoardPage";
+import { UsersPage } from "./components/Pages/UsersPage/UsersPage";
+import { PlansPage } from "./components/Pages/PlansPage/PlansPage";
+import { InsurancePage } from "./components/Pages/InsurancePage/InsurancePage";
+import { ProductsPage } from "./components/Pages/ProductsPage/ProductsPage";
+import { EstablishmentPage } from "./components/Pages/EstablishmentPage/EstablishmentPage";
+import { CoveragePage } from "./components/Pages/CoveragePage/CoveragePage";
+import { IncidentsPage } from "./components/Pages/IncidentsPage/IncidentsPage";
+import { LoginPage } from "./components/Pages/LoginPage/LoginPage";
 
 function App() {
   return (

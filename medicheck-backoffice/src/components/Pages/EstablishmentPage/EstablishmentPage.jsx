@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { SideBar } from "./SideBar";
-import { TopBar } from "./TopBar";
-import { PageMainContent } from "./PageMainContent";
+
 import AddLocationAltOutlinedIcon from "@mui/icons-material/AddLocationAltOutlined";
-import { MainTable } from "./MainTable";
+import { MainTable } from "../../UI/MainTable";
+import { SideBar } from "../../UI/SideBar";
+import { TopBar } from "../../UI/TopBar";
+import { PageMainContent } from "../../UI/PageMainContent";
 export const EstablishmentPage = () => {
   const dummyData = [
     {

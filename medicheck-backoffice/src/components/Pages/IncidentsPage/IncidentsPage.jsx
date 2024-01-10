@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { SideBar } from "./SideBar";
-import { TopBar } from "./TopBar";
-import { PageMainContent } from "./PageMainContent";
-import { MainTable } from "./MainTable";
+import { SideBar } from "../../UI/SideBar";
+import { TopBar } from "../../UI/TopBar";
+import { PageMainContent } from "../../UI/PageMainContent";
+import { MainTable } from "../../UI/MainTable";
 import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
 export const IncidentsPage = () => {
   const dummyData = [

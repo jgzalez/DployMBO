@@ -1,7 +1,7 @@
 import React from "react";
 import Avatar from "@mui/material/Avatar";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import profileImg from "../assets/profile.png";
+import profileImg from "../../assets/profile.png";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import CircleIcon from "@mui/icons-material/Circle";
 import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
@@ -9,7 +9,7 @@ import SearchIcon from "@mui/icons-material/Search";
 export const TopBar = ({ openMenu, ...props }) => {
   return (
     <div
-      className=" bg-white !z-[4] fixed top-0 text-black flex justify-evenly items-center gap-[5%] w-full h-[60px] py-6 pl-3 md:h-[80px] lg:w-[90%] lg:ml-[180px] xl:ml-[150px] xl:w-full xl:justify-around"
+      className=" bg-white fixed top-0 text-black flex justify-evenly items-center gap-[5%] w-full h-[60px] py-6 pl-3 md:h-[80px] lg:w-[90%] lg:ml-[180px] xl:ml-[150px] xl:w-full xl:justify-around"
       {...props}
     >
       <div

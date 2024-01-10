@@ -1,5 +1,5 @@
 import React from "react";
-import appLogo from "../assets/applogo.png";
+import appLogo from "../../assets/applogo.png";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import VerifiedUserOutlinedIcon from "@mui/icons-material/VerifiedUserOutlined";
 import { SidebarItem } from "./SidebarItem";
@@ -11,10 +11,10 @@ import BallotOutlinedIcon from "@mui/icons-material/BallotOutlined";
 import ReportOutlinedIcon from "@mui/icons-material/ReportOutlined";
 
 export const SideBar = ({ style, closeMenu }) => {
-  let sideBarClassname = `fixed w-[100vw] h-full z-10 flex   ${style}`;
+  let sideBarClassname = `fixed w-[100vw] h-full z-30 flex lg:w-[274px]  ${style}`;
   return (
     <div className={sideBarClassname}>
-      <div className="w-[60%] bg-[#1C222A] h-full lg:sticky lg:left-0  lg:w-[274px] lg:flex-col">
+      <div className="w-[60%] bg-[#1C222A]  h-full lg:sticky lg:left-0  lg:w-[274px] lg:flex-col">
         <div className="w-full h-[84px] flex justify-start pl-4 items-center bg-[#232B43] text-white gap-[5%]">
           <img src={appLogo} />
           <h1>MediCheck</h1>

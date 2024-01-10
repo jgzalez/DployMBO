@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import { SideBar } from "./SideBar";
-import { TopBar } from "./TopBar";
-import { PageMainContent } from "./PageMainContent";
+
 import { StadisticWidget } from "./StadisticWidget";
 import { Barchart } from "./Barchart";
-import { StadisticWidgetList } from "./StadisticWidgetList";
+
 import { PieChart } from "./PieChart";
-import tableImg from "../assets/Group 270.png";
+
+import { SideBar } from "../../UI/SideBar";
+import { TopBar } from "../../UI/TopBar";
+import { PageMainContent } from "../../UI/PageMainContent";
+import { StadisticWidgetList } from "./StadisticWidgetList";
+import { ConsultTable } from "./ConsultTable";
 
 export const DashBoardPage = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -35,9 +38,7 @@ export const DashBoardPage = () => {
             <StadisticWidgetList />
             <Barchart />
             <PieChart />
-            <div className=" w-[600px] h-[320px] ml-52 mt-4 rounded-[11px] shadow-main-shadow overflow-auto bg-white lg:ml-2 lg:w-[63.5vw] lg:h-[250px] lg:col-span-2 xl:col-span-4  xl:w-[73.5vw] xl:h-[300px] xl:ml-0 2xl:w-[76.4vw] 2xl:h-[320px]">
-              <table className="w-[110%] xl:w-full"></table>
-            </div>
+            <ConsultTable />
           </div>
         </PageMainContent>
       </div>

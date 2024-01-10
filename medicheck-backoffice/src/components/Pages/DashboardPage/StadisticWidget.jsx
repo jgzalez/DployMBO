@@ -1,6 +1,6 @@
 import React from "react";
-import contactImg from "../assets/maleUser.png";
-import forwardImg from "../assets/forwardButton.png";
+import contactImg from "../../../assets/maleUser.png";
+import forwardImg from "../../../assets/forwardButton.png";
 
 export const StadisticWidget = ({
   total,
