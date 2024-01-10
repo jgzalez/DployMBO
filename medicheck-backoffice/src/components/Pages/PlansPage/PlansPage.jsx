@@ -5,87 +5,97 @@ import { MainTable } from "../../UI/MainTable";
 import { SideBar } from "../../UI/SideBar";
 import { TopBar } from "../../UI/TopBar";
 import { PageMainContent } from "../../UI/PageMainContent";
+import { PageLayout } from "../../UI/PageLayout";
 export const PlansPage = () => {
   const dummyData = [
     {
+      id: 1,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 2,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 3,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 4,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 5,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 6,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 7,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 8,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 9,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 10,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
   ];
-  const [isOpen, setIsOpen] = useState(false);
-  function handleOpenMenu() {
-    setIsOpen(!isOpen);
+  const [tableData, setTableData] = useState(dummyData);
+
+  function handleAddEntity(newData) {
+    setTableData((prevValue) => {
+      return [...prevValue, newData];
+    });
   }
-  console.log(isOpen);
-  function handleClose() {
-    setIsOpen(false);
+
+  function handleDeleteEntity(id) {
+    const newTableData = tableData.filter((data) => data.id != id);
+    setTableData(newTableData);
   }
+
   return (
-    <div className="h-screen w-screen flex overflow-hidden">
-      {isOpen ? (
-        <SideBar closeMenu={handleClose} />
-      ) : (
-        <SideBar style=" hidden lg:flex" />
-      )}
-      <div className=" h-full w-full flex-col">
-        <TopBar openMenu={handleOpenMenu} />
-        <PageMainContent
-          title={"Planes"}
-          buttonDescription={"Agregar planes "}
-          buttonIcon={<PostAddOutlinedIcon />}
-        >
-          <MainTable
-            headers={["Nombre", "Descripcion", "Aseguradora", "Acciones"]}
-            mainData={dummyData}
-          />
-        </PageMainContent>
-      </div>
-    </div>
+    <PageLayout
+      pageMainTitle={"Planes"}
+      pageMainbuttonDescription={"Agregar planes"}
+      pageMainbuttonIcon={<PostAddOutlinedIcon />}
+      entries={Object.keys(tableData[0]).filter((entry) => entry !== "id")}
+      modalTitle={"Agregar Planes"}
+      onAdd={handleAddEntity}
+    >
+      <MainTable
+        headers={["Nombre", "Descripcion", "Aseguradora", "Acciones"]}
+        mainData={tableData}
+        onDelete={handleDeleteEntity}
+      />
+    </PageLayout>
   );
 };

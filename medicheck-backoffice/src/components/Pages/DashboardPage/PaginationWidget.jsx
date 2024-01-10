@@ -2,7 +2,7 @@ import React from "react";
 
 export const PaginationWidget = () => {
   return (
-    <div className="w-[800px] h-[45px]  items-center absolute bottom-4 flex justify-between  xl:w-full ">
+    <div className="w-[800px] h-[45px]  items-center absolute bottom-4 flex justify-between lg:w-[1100px] xl:w-full ">
       <p className="ml-4 text-[#909194] font-semibold">
         Mostrando 1 a 5 de 25 entradas
       </p>
