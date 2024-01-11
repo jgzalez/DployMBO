@@ -18,9 +18,17 @@ export const LoginPage = () => {
         tipoDocumento: "CEDULA", // Replace with actual value or form input
         clave: password 
       };
-      
-      const response = await login(credentials);
-      console.log(response); // Handle the response (e.g., storing auth token)
+
+      const response = await login(credentials); // Make the API call
+      console.log("API response:", response); // Log the full response
+  
+      if (!response || !response.accessToken) {
+        throw new Error("Invalid response from server: missing accessToken");
+      } 
+
+      const token = response.accessToken; // Asegúrate de que esto coincida con la estructura de tu respuesta
+      localStorage.setItem('token', token);
+      console.log(token); // Handle the response (e.g., storing auth token)
       navigate("/dashboard");
     } catch (error) {
       console.error("Login failed:", error);

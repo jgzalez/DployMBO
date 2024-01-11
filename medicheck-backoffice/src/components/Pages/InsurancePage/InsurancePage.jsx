@@ -1,13 +1,19 @@
 import React, { useState } from "react";
+import axios from 'axios';
 
 import VerifiedOutlinedIcon from "@mui/icons-material/VerifiedOutlined";
 import { MainTable } from "../../UI/MainTable";
-// import { SideBar } from "../../UI/SideBar";
-// import { TopBar } from "../../UI/TopBar";
-// import { PageMainContent } from "../../UI/PageMainContent";
-
 import { PageLayout } from "../../UI/PageLayout";
-import { AddEntityModal } from "../../UI/AddEntityModal";
+const API_BASE_URL = 'http://localhost:5280';
+
+const axiosInstance = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+      'Content-Type': 'application/json',
+  },
+});
+
+
 export const InsurancePage = () => {
   const dummyData = [
     {
@@ -56,16 +62,40 @@ export const InsurancePage = () => {
 
   const [tableData, setTableData] = useState(dummyData);
 
-  function handleAddEntity(newData) {
-    setTableData((prevValue) => {
-      return [...prevValue, newData];
-    });
+
+    async function addInsurance(insuranceData) {
+      const token = localStorage.getItem('token'); // Reemplazar con la lógica para obtener el token real
+      console.log(token); // Handle the response (e.g., storing auth token)
+
+      try {
+          const response = await axiosInstance.post('/aseguradoras', insuranceData, {
+              headers: {
+                  Authorization: `Bearer ${token}`
+              }
+          });
+          console.log(response.data);
+      } catch (error) {
+          console.error("Hubo un error al guardar la aseguradora: ", error);
+      }
   }
+
+
+  function handleAddEntity(newData) {
+    addInsurance(newData).then(() => {
+        setTableData((prevValue) => {
+            return [...prevValue, newData];
+        });
+    }).catch(error => {
+        // Manejar el error aquí
+    });
+}
+
   function handleDeleteEntity(id) {
     const newTableData = tableData.filter((data) => data.id != id);
     setTableData(newTableData);
   }
 
+  
   return (
     <>
       <PageLayout
@@ -86,4 +116,5 @@ export const InsurancePage = () => {
       </PageLayout>
     </>
   );
+  
 };
