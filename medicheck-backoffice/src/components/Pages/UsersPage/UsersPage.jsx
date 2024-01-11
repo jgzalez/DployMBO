@@ -5,6 +5,7 @@ import { MainTable } from "../../UI/MainTable";
 import { SideBar } from "../../UI/SideBar";
 import { TopBar } from "../../UI/TopBar";
 import { PageMainContent } from "../../UI/PageMainContent";
+import { PageLayout } from "../../UI/PayeLayout";
 
 export const UsersPage = () => {
   const dummyData = [
@@ -51,34 +52,17 @@ export const UsersPage = () => {
       Telefono: "+1 809 875 4411",
     },
   ];
-  const [isOpen, setIsOpen] = useState(false);
-  function handleOpenMenu() {
-    setIsOpen(!isOpen);
-  }
-  console.log(isOpen);
-  function handleClose() {
-    setIsOpen(false);
-  }
+
   return (
-    <div className="h-screen w-screen flex overflow-hidden">
-      {isOpen ? (
-        <SideBar closeMenu={handleClose} />
-      ) : (
-        <SideBar style=" hidden lg:flex" />
-      )}
-      <div className=" h-full w-full flex-col">
-        <TopBar openMenu={handleOpenMenu} />
-        <PageMainContent
-          title={"Usuarios"}
-          buttonDescription={"Agregar usuarios "}
-          buttonIcon={<PersonAddAltOutlinedIcon />}
-        >
-          <MainTable
-            headers={["Nombre", "Apellido", "Correo", "Telefono", "Acciones"]}
-            mainData={dummyData}
-          />
-        </PageMainContent>
-      </div>
-    </div>
+    <PageLayout
+      pageMainTitle={"Usuarios"}
+      pageMainbuttonDescription={"Agregar usuarios"}
+      pageMainbuttonIcon={<PersonAddAltOutlinedIcon />}
+    >
+      <MainTable
+        headers={["Nombre", "Apellido", "Correo", "Telefono", "Acciones"]}
+        mainData={dummyData}
+      />
+    </PageLayout>
   );
 };

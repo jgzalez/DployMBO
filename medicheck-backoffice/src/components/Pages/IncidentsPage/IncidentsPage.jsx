@@ -4,6 +4,7 @@ import { TopBar } from "../../UI/TopBar";
 import { PageMainContent } from "../../UI/PageMainContent";
 import { MainTable } from "../../UI/MainTable";
 import ErrorOutlineOutlinedIcon from "@mui/icons-material/ErrorOutlineOutlined";
+import { PageLayout } from "../../UI/PayeLayout";
 export const IncidentsPage = () => {
   const dummyData = [
     {
@@ -49,41 +50,23 @@ export const IncidentsPage = () => {
       Estado: "Cerrado",
     },
   ];
-  const [isOpen, setIsOpen] = useState(false);
-  function handleOpenMenu() {
-    setIsOpen(!isOpen);
-  }
-  console.log(isOpen);
-  function handleClose() {
-    setIsOpen(false);
-  }
 
   return (
-    <div className="h-screen w-screen flex overflow-hidden">
-      {isOpen ? (
-        <SideBar closeMenu={handleClose} />
-      ) : (
-        <SideBar style=" hidden lg:flex" />
-      )}
-      <div className=" h-full w-full flex-col">
-        <TopBar openMenu={handleOpenMenu} />
-        <PageMainContent
-          title={"Incidentes"}
-          buttonDescription={"Agregar incidente "}
-          buttonIcon={<ErrorOutlineOutlinedIcon />}
-        >
-          <MainTable
-            headers={[
-              "Usuario",
-              "Descripcion",
-              "Establecimiento",
-              "Estado",
-              "Acciones",
-            ]}
-            mainData={dummyData}
-          />
-        </PageMainContent>
-      </div>
-    </div>
+    <PageLayout
+      pageMainTitle={"Incidentes"}
+      pageMainbuttonDescription={"Agregar incidentes"}
+      pageMainbuttonIcon={<ErrorOutlineOutlinedIcon />}
+    >
+      <MainTable
+        headers={[
+          "Usuario",
+          "Descripcion",
+          "Establecimiento",
+          "Estado",
+          "Acciones",
+        ]}
+        mainData={dummyData}
+      />
+    </PageLayout>
   );
 };

@@ -5,6 +5,7 @@ import AddModeratorOutlinedIcon from "@mui/icons-material/AddModeratorOutlined";
 import { SideBar } from "../../UI/SideBar";
 import { TopBar } from "../../UI/TopBar";
 import { PageMainContent } from "../../UI/PageMainContent";
+import { PageLayout } from "../../UI/PayeLayout";
 export const CoveragePage = () => {
   const dummyData = [
     {
@@ -62,34 +63,17 @@ export const CoveragePage = () => {
       Porcentaje: "90%",
     },
   ];
-  const [isOpen, setIsOpen] = useState(false);
-  function handleOpenMenu() {
-    setIsOpen(!isOpen);
-  }
-  console.log(isOpen);
-  function handleClose() {
-    setIsOpen(false);
-  }
+
   return (
-    <div className="h-screen w-screen flex overflow-hidden">
-      {isOpen ? (
-        <SideBar closeMenu={handleClose} />
-      ) : (
-        <SideBar style=" hidden lg:flex" />
-      )}
-      <div className=" h-full w-full flex-col">
-        <TopBar openMenu={handleOpenMenu} />
-        <PageMainContent
-          title={"Coberturas"}
-          buttonDescription={"Agregar coberturas "}
-          buttonIcon={<AddModeratorOutlinedIcon />}
-        >
-          <MainTable
-            headers={["Producto", "Plan", "Cubre", "Porcentaje", "Acciones"]}
-            mainData={dummyData}
-          />
-        </PageMainContent>
-      </div>
-    </div>
+    <PageLayout
+      pageMainTitle={"Coberturas"}
+      pageMainbuttonDescription={"Agregar coberturas"}
+      pageMainbuttonIcon={<AddModeratorOutlinedIcon />}
+    >
+      <MainTable
+        headers={["Producto", "Plan", "Cubre", "Porcentaje", "Acciones"]}
+        mainData={dummyData}
+      />
+    </PageLayout>
   );
 };

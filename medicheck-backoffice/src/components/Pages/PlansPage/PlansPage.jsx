@@ -5,6 +5,7 @@ import { MainTable } from "../../UI/MainTable";
 import { SideBar } from "../../UI/SideBar";
 import { TopBar } from "../../UI/TopBar";
 import { PageMainContent } from "../../UI/PageMainContent";
+import { PageLayout } from "../../UI/PayeLayout";
 export const PlansPage = () => {
   const dummyData = [
     {
@@ -58,34 +59,17 @@ export const PlansPage = () => {
       Aseguradora: "Humano Seguros",
     },
   ];
-  const [isOpen, setIsOpen] = useState(false);
-  function handleOpenMenu() {
-    setIsOpen(!isOpen);
-  }
-  console.log(isOpen);
-  function handleClose() {
-    setIsOpen(false);
-  }
+
   return (
-    <div className="h-screen w-screen flex overflow-hidden">
-      {isOpen ? (
-        <SideBar closeMenu={handleClose} />
-      ) : (
-        <SideBar style=" hidden lg:flex" />
-      )}
-      <div className=" h-full w-full flex-col">
-        <TopBar openMenu={handleOpenMenu} />
-        <PageMainContent
-          title={"Planes"}
-          buttonDescription={"Agregar planes "}
-          buttonIcon={<PostAddOutlinedIcon />}
-        >
-          <MainTable
-            headers={["Nombre", "Descripcion", "Aseguradora", "Acciones"]}
-            mainData={dummyData}
-          />
-        </PageMainContent>
-      </div>
-    </div>
+    <PageLayout
+      pageMainTitle={"Planes"}
+      pageMainbuttonDescription={"Agregar planes"}
+      pageMainbuttonIcon={<PostAddOutlinedIcon />}
+    >
+      <MainTable
+        headers={["Nombre", "Descripcion", "Aseguradora", "Acciones"]}
+        mainData={dummyData}
+      />
+    </PageLayout>
   );
 };

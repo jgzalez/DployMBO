@@ -22,9 +22,9 @@ export const MainTable = ({ headers, mainData }) => {
               className="h-14 even:bg-table-row-grey odd:bg-white"
               key={data.id}
             >
-              {headers.map((header) => (
-                <td className="pl-5" key={data[header]}>
-                  {data[header] || (
+              {Object.keys(data).map((key) => (
+                <td className="pl-5" key={data[key]}>
+                  {data[key] || (
                     <div>
                       <button className="text-[#0033CC] border-[1px] border-solid border-[#0033CC] py-1 px-2 rounded-md mr-2">
                         editar
@@ -36,6 +36,16 @@ export const MainTable = ({ headers, mainData }) => {
                   )}
                 </td>
               ))}
+              <td className="pl-5" key={data.id}>
+                <div>
+                  <button className="text-[#0033CC] border-[1px] border-solid border-[#0033CC] py-1 px-2 rounded-md mr-2">
+                    editar
+                  </button>{" "}
+                  <button className="text-[#FF1001] border-[1px] border-solid border-[#FF1001] py-1 px-2 rounded-md">
+                    Eliminar
+                  </button>
+                </div>
+              </td>
             </tr>
           ))}
         </tbody>
