@@ -1,67 +1,149 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 
 import PersonAddAltOutlinedIcon from "@mui/icons-material/PersonAddAltOutlined";
 import { MainTable } from "../../UI/MainTable";
-import { SideBar } from "../../UI/SideBar";
-import { TopBar } from "../../UI/TopBar";
-import { PageMainContent } from "../../UI/PageMainContent";
 import { PageLayout } from "../../UI/PayeLayout";
+import { AddEntityModal } from "../../UI/AddEntityModal";
+import { DeleteEntityModal } from "../../UI/DeleteEntityModal";
+import { ModalButtons } from "../../UI/ModalButtons";
+import { ModalInput } from "../../UI/ModalInput";
 
 export const UsersPage = () => {
   const dummyData = [
     {
+      id: 1,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
       Correo: "ismaeldcent@gmail.com",
       Telefono: "+1 809 875 4411",
     },
     {
+      id: 2,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
       Correo: "ismaeldcent@gmail.com",
       Telefono: "+1 809 875 4411",
     },
     {
+      id: 3,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
       Correo: "ismaeldcent@gmail.com",
       Telefono: "+1 809 875 4411",
     },
     {
+      id: 4,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
       Correo: "ismaeldcent@gmail.com",
       Telefono: "+1 809 875 4411",
     },
     {
+      id: 5,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
       Correo: "ismaeldcent@gmail.com",
       Telefono: "+1 809 875 4411",
     },
     {
+      id: 6,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
       Correo: "ismaeldcent@gmail.com",
       Telefono: "+1 809 875 4411",
     },
     {
+      id: 7,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
       Correo: "ismaeldcent@gmail.com",
       Telefono: "+1 809 875 4411",
     },
   ];
+  const AddEntityDialog = useRef();
+  const DeleteEntityDialog = useRef();
+  const initialState = {
+    id: 0,
+    Nombre: "",
+    Apellido: "",
+    Correo: "",
+    Telefono: "",
+  };
+  const [id, setId] = useState();
+  const [tableData, setTableData] = useState(dummyData);
+  const [newUser, setNewUser] = useState(initialState);
+
+  function handleSave() {
+    const newData = { ...newUser, id: Math.random() };
+    console.log(newData);
+    setTableData((prevValue) => {
+      return [...prevValue, newData];
+    });
+    setNewUser(initialState);
+  }
+  function handleInput(e) {
+    const name = e.target.name;
+    const value = e.target.value;
+    setNewUser((prevValue) => {
+      return { ...prevValue, [name]: value };
+    });
+  }
+  function handleOpenDeleteModal(id) {
+    DeleteEntityDialog.current.showModal();
+    setId(id);
+  }
+
+  function handleDelete() {
+    setTableData(tableData.filter((data) => data.id != id));
+  }
 
   return (
     <PageLayout
       pageMainTitle={"Usuarios"}
       pageMainbuttonDescription={"Agregar usuarios"}
       pageMainbuttonIcon={<PersonAddAltOutlinedIcon />}
+      onAdd={() => AddEntityDialog.current.showModal()}
     >
+      <AddEntityModal ref={AddEntityDialog} title={"Agregar usuario"}>
+        <ModalInput
+          label={"Nombre"}
+          type={"text"}
+          placeholder={"Ingresa un nombre"}
+          onChange={handleInput}
+          name={"Nombre"}
+          value={newUser.Nombre}
+        />
+        <ModalInput
+          label={"Apellido"}
+          type={"text"}
+          placeholder={"Ingresa un apellido"}
+          onChange={handleInput}
+          name={"Apellido"}
+          value={newUser.Apellido}
+        />
+        <ModalInput
+          label={"Correo"}
+          type={"text"}
+          placeholder={"Ingresa un correo"}
+          onChange={handleInput}
+          name={"Correo"}
+          value={newUser.Correo}
+        />
+        <ModalInput
+          label={"Telefono"}
+          type={"text"}
+          placeholder={"Ingresa un telefono"}
+          onChange={handleInput}
+          name={"Telefono"}
+          value={newUser.Telefono}
+        />
+        <ModalButtons onSave={handleSave} />
+      </AddEntityModal>
+      <DeleteEntityModal ref={DeleteEntityDialog} onDelete={handleDelete} />
       <MainTable
-        headers={["Nombre", "Apellido", "Correo", "Telefono", "Acciones"]}
-        mainData={dummyData}
+        headers={["ID", "Nombre", "Apellido", "Correo", "Telefono", "Acciones"]}
+        mainData={tableData}
+        onDelete={handleOpenDeleteModal}
       />
     </PageLayout>
   );
