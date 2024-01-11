@@ -9,7 +9,7 @@ export const PageLayout = ({
   pageMainbuttonIcon,
   pageMainWelcome,
   children,
-
+  onAdd,
   ...props
 }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,6 +39,7 @@ export const PageLayout = ({
           pageWelcome={pageMainWelcome}
           buttonDescription={pageMainbuttonDescription}
           buttonIcon={pageMainbuttonIcon}
+          onAdd={onAdd}
         >
           {children}
         </PageMainContent>

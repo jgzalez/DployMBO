@@ -8,11 +8,11 @@ export const PageMainContent = ({
   buttonDescription,
   buttonIcon,
   pageWelcome,
+  onAdd,
   ...props
 }) => {
   return (
     <div
-      onClick={() => console.log("Click")}
       className="w-full h-screen  bg-[#F3F2FB] py-5 overflow-y-scroll overflow-x-hidden  mt-[60px] sm:h-full md:mt-[80px] lg:ml-[275px] lg:w-[77vw]   xl:w-[83vw]  xl:ml-[250px] 2xl:w-[86vw] 2xl:ml-[275px]"
       {...props}
     >
@@ -23,7 +23,10 @@ export const PageMainContent = ({
           </h1>
 
           <div className="flex items-center pl-3  gap-3 md:mr-16 mb-4 ">
-            <button className="bg-[#0A41E9] text-xs w-[200px] rounded-md p-1 text-white md:px-3 shadow-main-shadow h-[2.5rem] md:w-fit ">
+            <button
+              onClick={onAdd}
+              className="bg-[#0A41E9] text-xs w-[200px] rounded-md p-1 text-white md:px-3 shadow-main-shadow h-[2.5rem] md:w-fit "
+            >
               {buttonIcon} {buttonDescription}
             </button>
             <div className="bg-[#0A41E9] h-[2.5rem] hidden md:w-fit rounded-md px-3 md:flex items-center ">
