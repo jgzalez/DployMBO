@@ -145,7 +145,7 @@ export const ProductsPage = () => {
           name={"Categoria"}
           onChange={handleInput}
         />
-        <ModalButtons onSave={handleSave} />
+        <ModalButtons onSave={handleSave} action={"Guardar"} />
       </AddEntityModal>
       <DeleteEntityModal ref={DeleteEntityDialog} onDelete={handleDelete} />
       <MainTable

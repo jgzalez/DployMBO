@@ -148,7 +148,7 @@ export const CoveragePage = () => {
           name={"Porcentaje"}
           value={newCoverage.Porcentaje}
         />
-        <ModalButtons onSave={handleSave} />
+        <ModalButtons onSave={handleSave} action={"Guardar"} />
       </AddEntityModal>
       <DeleteEntityModal ref={DeleteEntityDialog} onDelete={handleDelete} />
       <MainTable

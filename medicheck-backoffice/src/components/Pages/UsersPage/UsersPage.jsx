@@ -7,6 +7,7 @@ import { AddEntityModal } from "../../UI/AddEntityModal";
 import { DeleteEntityModal } from "../../UI/DeleteEntityModal";
 import { ModalButtons } from "../../UI/ModalButtons";
 import { ModalInput } from "../../UI/ModalInput";
+import { EditEntityModal } from "../../UI/EditEntityModal";
 
 export const UsersPage = () => {
   const dummyData = [
@@ -62,6 +63,7 @@ export const UsersPage = () => {
   ];
   const AddEntityDialog = useRef();
   const DeleteEntityDialog = useRef();
+  const EditEntityDialog = useRef();
   const initialState = {
     id: 0,
     Nombre: "",
@@ -88,6 +90,14 @@ export const UsersPage = () => {
       return { ...prevValue, [name]: value };
     });
   }
+
+  // function handleUpdateInput(e) {
+  //   const name = e.target.name;
+  //   const value = e.target.value;
+  //   setUpdateUser((prevValue) => {
+  //     return { ...prevValue, [name]: value };
+  //   });
+  // }
   function handleOpenDeleteModal(id) {
     DeleteEntityDialog.current.showModal();
     setId(id);
@@ -95,6 +105,22 @@ export const UsersPage = () => {
 
   function handleDelete() {
     setTableData(tableData.filter((data) => data.id != id));
+  }
+
+  function handleEdit(data) {
+    EditEntityDialog.current.showModal();
+    setNewUser(data);
+  }
+
+  function handleUpdate() {
+    const entityToUpdate = tableData.find((entity) => newUser.id === entity.id);
+
+    setNewUser((prevValue) => {
+      return { ...entityToUpdate, ...prevValue };
+    });
+    console.log(newUser);
+
+    // setTableData([...tableData, ...newUser]);
   }
 
   return (
@@ -137,13 +163,49 @@ export const UsersPage = () => {
           name={"Telefono"}
           value={newUser.Telefono}
         />
-        <ModalButtons onSave={handleSave} />
+        <ModalButtons onSave={handleSave} action={"Guardar"} />
       </AddEntityModal>
       <DeleteEntityModal ref={DeleteEntityDialog} onDelete={handleDelete} />
+      <EditEntityModal ref={EditEntityDialog} title="Editar usuarios">
+        <ModalInput
+          label={"Nombre"}
+          type={"text"}
+          placeholder={"Ingresa un nombre"}
+          onChange={handleInput}
+          name={"Nombre"}
+          value={newUser.Nombre}
+        />
+        <ModalInput
+          label={"Apellido"}
+          type={"text"}
+          placeholder={"Ingresa un apellido"}
+          onChange={handleInput}
+          name={"Apellido"}
+          value={newUser.Apellido}
+        />
+        <ModalInput
+          label={"Correo"}
+          type={"text"}
+          placeholder={"Ingresa un correo"}
+          onChange={handleInput}
+          name={"Correo"}
+          value={newUser.Correo}
+        />
+        <ModalInput
+          label={"Telefono"}
+          type={"text"}
+          placeholder={"Ingresa un telefono"}
+          onChange={handleInput}
+          name={"Telefono"}
+          value={newUser.Telefono}
+        />
+        <ModalButtons onSave={handleUpdate} action={"Editar"} />
+      </EditEntityModal>
       <MainTable
         headers={["ID", "Nombre", "Apellido", "Correo", "Telefono", "Acciones"]}
         mainData={tableData}
         onDelete={handleOpenDeleteModal}
+        onEdit={handleEdit}
       />
     </PageLayout>
   );

@@ -1,6 +1,6 @@
 import React from "react";
 
-export const MainTable = ({ headers, mainData, onDelete }) => {
+export const MainTable = ({ headers, mainData, onDelete, onEdit }) => {
   return (
     <div className="overflow-auto w-full h-fit py-2 lg:overflow-scroll lg:w-screen  lg:ml-4 xl:overflow-scroll xl:ml-8 2xl:w-full 2xl:overflow-hidden 2xl:ml-3">
       <table className="w-[300%] h-[90%] rounded-md mt-2 ml-3 md:w-[150%] lg:w-[120%] md:ml-8 xl:w-[95%] shadow-main-shadow 2xl:w-full ">
@@ -35,7 +35,10 @@ export const MainTable = ({ headers, mainData, onDelete }) => {
               ))}
               <td className="pl-5" key={data.id}>
                 <div>
-                  <button className="text-[#0033CC] border-[1px] border-solid border-[#0033CC] py-1 px-2 rounded-md mr-2">
+                  <button
+                    onClick={() => onEdit(data)}
+                    className="text-[#0033CC] border-[1px] border-solid border-[#0033CC] py-1 px-2 rounded-md mr-2"
+                  >
                     editar
                   </button>{" "}
                   <button

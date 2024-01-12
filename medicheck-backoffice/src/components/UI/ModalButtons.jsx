@@ -1,6 +1,6 @@
 import React from "react";
 
-export const ModalButtons = ({ onSave }) => {
+export const ModalButtons = ({ onSave, action }) => {
   return (
     <div className="flex justify-end gap-8">
       <button className="w-[170px] p-2 rounded-md h-[70px] border border-black">
@@ -10,7 +10,7 @@ export const ModalButtons = ({ onSave }) => {
         className="w-[170px] p-2 rounded-md h-[70px] bg-[#1C222A] text-white"
         onClick={onSave}
       >
-        Guardar
+        {action}
       </button>
     </div>
   );

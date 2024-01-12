@@ -137,7 +137,7 @@ export const EstablishmentPage = () => {
           name={"Telefono"}
           value={newEstablishment.Telefono}
         />
-        <ModalButtons onSave={handleSave} />
+        <ModalButtons onSave={handleSave} action={"Guardar"} />
       </AddEntityModal>
       <DeleteEntityModal ref={DeleteEntityDialog} onDelete={handleDelete} />
       <MainTable
