@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import { DeleteEntityModal } from "./DeleteEntityModal";
 
 export const MainTable = ({ headers, mainData, onDelete, onEdit }) => {
   return (
@@ -26,7 +27,10 @@ export const MainTable = ({ headers, mainData, onDelete, onEdit }) => {
                       <button className="text-[#0033CC] border-[1px] border-solid border-[#0033CC] py-1 px-2 rounded-md mr-2">
                         editar
                       </button>{" "}
-                      <button className="text-[#FF1001] border-[1px] border-solid border-[#FF1001] py-1 px-2 rounded-md">
+                      <button
+                        className="text-[#FF1001] border-[1px] border-solid border-[#FF1001] py-1 px-2 rounded-md"
+                        onClick={() => handleShowDeleteModal(data.id)}
+                      >
                         Eliminar
                       </button>
                     </div>

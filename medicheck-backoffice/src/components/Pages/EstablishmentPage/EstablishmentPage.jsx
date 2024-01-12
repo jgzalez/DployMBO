@@ -13,12 +13,14 @@ export const EstablishmentPage = () => {
   const dummyData = [
     {
       id: 1,
+      id: 1,
       Nombre: "Amadita",
       Categoria: "Laboratorio",
       Direccion: "C/Abelardo Rodriguez Urdaneta No. 102",
       Telefono: "+1 809 476 3535",
     },
     {
+      id: 2,
       id: 2,
       Nombre: "Amadita",
       Categoria: "Laboratorio",
@@ -27,12 +29,14 @@ export const EstablishmentPage = () => {
     },
     {
       id: 3,
+      id: 3,
       Nombre: "Amadita",
       Categoria: "Laboratorio",
       Direccion: "C/Abelardo Rodriguez Urdaneta No. 102",
       Telefono: "+1 809 476 3535",
     },
     {
+      id: 4,
       id: 4,
       Nombre: "Amadita",
       Categoria: "Laboratorio",
@@ -41,6 +45,7 @@ export const EstablishmentPage = () => {
     },
     {
       id: 5,
+      id: 5,
       Nombre: "Amadita",
       Categoria: "Laboratorio",
       Direccion: "C/Abelardo Rodriguez Urdaneta No. 102",
@@ -48,12 +53,14 @@ export const EstablishmentPage = () => {
     },
     {
       id: 6,
+      id: 6,
       Nombre: "Amadita",
       Categoria: "Laboratorio",
       Direccion: "C/Abelardo Rodriguez Urdaneta No. 102",
       Telefono: "+1 809 476 3535",
     },
     {
+      id: 7,
       id: 7,
       Nombre: "Amadita",
       Categoria: "Laboratorio",

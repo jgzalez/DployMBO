@@ -9,6 +9,7 @@ export const PageMainContent = ({
   buttonIcon,
   pageWelcome,
   onAdd,
+  onAdd,
   ...props
 }) => {
   return (

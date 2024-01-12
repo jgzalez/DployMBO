@@ -13,12 +13,14 @@ export const UsersPage = () => {
   const dummyData = [
     {
       id: 1,
+      id: 1,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
       Correo: "ismaeldcent@gmail.com",
       Telefono: "+1 809 875 4411",
     },
     {
+      id: 2,
       id: 2,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
@@ -27,12 +29,14 @@ export const UsersPage = () => {
     },
     {
       id: 3,
+      id: 3,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
       Correo: "ismaeldcent@gmail.com",
       Telefono: "+1 809 875 4411",
     },
     {
+      id: 4,
       id: 4,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
@@ -41,6 +45,7 @@ export const UsersPage = () => {
     },
     {
       id: 5,
+      id: 5,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
       Correo: "ismaeldcent@gmail.com",
@@ -48,12 +53,14 @@ export const UsersPage = () => {
     },
     {
       id: 6,
+      id: 6,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",
       Correo: "ismaeldcent@gmail.com",
       Telefono: "+1 809 875 4411",
     },
     {
+      id: 7,
       id: 7,
       Nombre: "Ismael David",
       Apellido: "Dicent Lahoz",

@@ -33,6 +33,7 @@ export const IncidentsPage = () => {
     },
     {
       id: 4,
+      id: 4,
       Usuario: "Ismael David",
       Descripcion: "En este local mi seguro no cubre el medicamento",
       Establecimiento: "Farmacia Carol",
@@ -96,7 +97,6 @@ export const IncidentsPage = () => {
   function handleDelete() {
     setTableData(tableData.filter((data) => data.id != id));
   }
-
   return (
     <PageLayout
       pageMainTitle={"Incidentes"}

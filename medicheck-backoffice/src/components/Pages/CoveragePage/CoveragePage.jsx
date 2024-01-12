@@ -12,12 +12,14 @@ export const CoveragePage = () => {
   const dummyData = [
     {
       id: 1,
+      id: 1,
       Producto: "Paracetamol",
       Plan: "Salud Platinum",
       Cubre: "Si",
       Porcentaje: "90%",
     },
     {
+      id: 2,
       id: 2,
       Producto: "Paracetamol",
       Plan: "Salud Platinum",
@@ -26,12 +28,14 @@ export const CoveragePage = () => {
     },
     {
       id: 3,
+      id: 3,
       Producto: "Paracetamol",
       Plan: "Salud Platinum",
       Cubre: "Si",
       Porcentaje: "90%",
     },
     {
+      id: 4,
       id: 4,
       Producto: "Paracetamol",
       Plan: "Salud Platinum",
@@ -40,12 +44,14 @@ export const CoveragePage = () => {
     },
     {
       id: 5,
+      id: 5,
       Producto: "Paracetamol",
       Plan: "Salud Platinum",
       Cubre: "Si",
       Porcentaje: "90%",
     },
     {
+      id: 6,
       id: 6,
       Producto: "Paracetamol",
       Plan: "Salud Platinum",
@@ -54,6 +60,7 @@ export const CoveragePage = () => {
     },
     {
       id: 7,
+      id: 7,
       Producto: "Paracetamol",
       Plan: "Salud Platinum",
       Cubre: "Si",
@@ -61,12 +68,14 @@ export const CoveragePage = () => {
     },
     {
       id: 8,
+      id: 8,
       Producto: "Paracetamol",
       Plan: "Salud Platinum",
       Cubre: "Si",
       Porcentaje: "90%",
     },
     {
+      id: 9,
       id: 9,
       Producto: "Paracetamol",
       Plan: "Salud Platinum",

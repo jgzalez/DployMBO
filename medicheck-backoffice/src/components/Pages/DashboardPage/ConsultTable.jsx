@@ -17,15 +17,20 @@ export const ConsultTable = () => {
       product: "Profilaxia",
       coverage: 60,
     },
+    {
+      user: "Rusbel Duarte",
+      insurer: "Senasa",
+      product: "Consulta medica",
+      coverage: 80,
+    },
   ];
   return (
-    <div className=" z-10 relative w-[90%] h-[320px]  mt-4 rounded-[11px] shadow-main-shadow overflow-auto md:col-span-2 md:w-[95%] bg-white lg:ml-2 lg:w-[89%]  lg:h-[290px] lg:col-span-2x xl:w-[95%] xl:col-span-4   xl:h-[300px] xl:ml-0 2xl:h-[320px]">
+    <div className=" z-10 relative w-[90%] h-[350px]  mt-4 rounded-[11px] shadow-main-shadow overflow-auto md:col-span-2 md:w-[95%] md:h-[380px] bg-white lg:ml-2 lg:w-[89%]  lg:h-[380px] lg:col-span-2x xl:w-[95%] xl:col-span-4   xl:ml-0 2xl:h-[400px]">
       <h2 className=" text-[#898A8D] font-semibold  m-4 2xl:m-6 2xl:text-xl">
         Consultas
       </h2>
       <table
-        onClick={() => console.log("Click")}
-        className="w-[800px] md:w-full
+        className="w-[800px] md:w-[800px] lg:w-[1100px] xl:w-full
        overflow-x-scroll"
       >
         <thead className="border-y border-solid h-[55px] border-[#979797] 2xl:h-[55px] ">

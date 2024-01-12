@@ -15,11 +15,13 @@ export const ProductsPage = () => {
   const dummyData = [
     {
       id: 1,
+      id: 1,
       Nombre: "Paracetamol",
       Tipo: "Medicamento",
       Categoria: "Infectologia",
     },
     {
+      id: 2,
       id: 2,
       Nombre: "Paracetamol",
       Tipo: "Medicamento",
@@ -27,11 +29,13 @@ export const ProductsPage = () => {
     },
     {
       id: 3,
+      id: 3,
       Nombre: "Paracetamol",
       Tipo: "Medicamento",
       Categoria: "Infectologia",
     },
     {
+      id: 4,
       id: 4,
       Nombre: "Paracetamol",
       Tipo: "Medicamento",
@@ -39,11 +43,13 @@ export const ProductsPage = () => {
     },
     {
       id: 5,
+      id: 5,
       Nombre: "Paracetamol",
       Tipo: "Medicamento",
       Categoria: "Infectologia",
     },
     {
+      id: 6,
       id: 6,
       Nombre: "Paracetamol",
       Tipo: "Medicamento",
@@ -51,11 +57,13 @@ export const ProductsPage = () => {
     },
     {
       id: 7,
+      id: 7,
       Nombre: "Paracetamol",
       Tipo: "Medicamento",
       Categoria: "Infectologia",
     },
     {
+      id: 8,
       id: 8,
       Nombre: "Paracetamol",
       Tipo: "Medicamento",

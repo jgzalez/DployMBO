@@ -13,11 +13,13 @@ export const PlansPage = () => {
   const dummyData = [
     {
       id: 1,
+      id: 1,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 2,
       id: 2,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
@@ -25,11 +27,13 @@ export const PlansPage = () => {
     },
     {
       id: 3,
+      id: 3,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 4,
       id: 4,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
@@ -37,11 +41,13 @@ export const PlansPage = () => {
     },
     {
       id: 5,
+      id: 5,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 6,
       id: 6,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
@@ -49,11 +55,13 @@ export const PlansPage = () => {
     },
     {
       id: 7,
+      id: 7,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 8,
       id: 8,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
@@ -61,11 +69,13 @@ export const PlansPage = () => {
     },
     {
       id: 9,
+      id: 9,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",
       Aseguradora: "Humano Seguros",
     },
     {
+      id: 10,
       id: 10,
       Nombre: "Salud Platinum",
       Descripcion: "Completa cobertura local en atencion ambulatorias",

@@ -25,5 +25,16 @@ export const DashBoardPage = () => {
         <ConsultTable />
       </div>
     </PageLayout>
+    <PageLayout
+      pageMainTitle={"Dashboard"}
+      pageMainWelcome={"Bienvenido John, todo listo para que lo administres"}
+    >
+      <div className="grid grid-cols-1 justify-items-center z-0  md:grid-cols-2 xl:grid-cols-4 lg:w-[93%] lg:mx-auto lg:my-0">
+        <StadisticWidgetList />
+        <Barchart />
+        <PieChart />
+        <ConsultTable />
+      </div>
+    </PageLayout>
   );
 };
