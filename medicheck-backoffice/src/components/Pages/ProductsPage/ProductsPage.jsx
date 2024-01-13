@@ -70,14 +70,21 @@ export const ProductsPage = () => {
   ];
   const [tableData, setTableData] = useState(dummyData);
 
-
   async function addProducts(productData) {
+    const fechaISO = new Date().toISOString();
+    
+    const productDataConFecha = {
+        ...productData,
+        fechaRegistro: fechaISO
+    };
+
     const token = localStorage.getItem('token'); // Reemplazar con la lógica para obtener el token real
     console.log(token); // Handle the response (e.g., storing auth token)
+    console.log(productDataConFecha);
 
     try {
-        const response = await axiosInstance.post('/productos', productData, {
-            headers: {
+        const response = await axiosInstance.post('/productos', productDataConFecha, {
+          headers: {
                 Authorization: `Bearer ${token}`
             }
         });
@@ -88,11 +95,19 @@ export const ProductsPage = () => {
 }
 
 
-  function handleAddEntity(newData) {
-    setTableData((prevValue) => {
-      return [...prevValue, newData];
+
+function handleAddEntity(newData) {
+  addProducts(newData)
+    .then(() => {
+        setTableData((prevValue) => {
+            return [...prevValue, newData];
+        });
+    })
+    .catch(error => {
+        console.error("Error al agregar entidad: ", error);
+        // Manejo adicional del error
     });
-  }
+}
 
   function handleDeleteEntity(id) {
     const newTableData = tableData.filter((data) => data.id != id);

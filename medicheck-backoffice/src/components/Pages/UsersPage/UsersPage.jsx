@@ -68,6 +68,23 @@ export const UsersPage = () => {
     });
   }
 
+  async function addUser(userData) {
+    const token = localStorage.getItem('token'); // Reemplazar con la lógica para obtener el token real
+    console.log(token); // Handle the response (e.g., storing auth token)
+
+    try {
+        const response = await axiosInstance.post('/usuarios', userData, {
+            headers: {
+                Authorization: `Bearer ${token}`
+            }
+        });
+        console.log(response.data);
+    } catch (error) {
+        console.error("Hubo un error al guardar la aseguradora: ", error);
+    }
+}
+
+
   function handleDeleteEntity(id) {
     const newTableData = tableData.filter((data) => data.id != id);
     setTableData(newTableData);
